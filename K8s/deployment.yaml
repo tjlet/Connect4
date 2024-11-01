@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connect-four
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: connect-four
+  template:
+    metadata:
+      labels:
+        app: connect-four
+    spec:
+      containers:
+      - name: connect-four
+        image: <tleto>/connect-four:latest
+        ports:
+        - containerPort: 5000
